@@ -1,37 +1,32 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
+import Todo from "../../components/todo";
 import "./index.css";
 
+const Main = () => {
+    const [value, setValue] = useState('');
+    const [todos,setTodos] = useState([]);
 
-// <div className="listTask">
-//     <div class="tasks">
-//         <input type="checkbox"></input>
-//         <input id="task" type="text" value="comprar Pao"></input>
-//     </div>
-//     <div class="tasks">
-//         <input type="checkbox"></input>
-//         <input type="text" placeholder="pao"></input>
-//     </div>
-// </div>
+    const handleInput = event =>{
+        setValue(event.target.value)
+    };
 
-
-export default class main extends Component {
-    todos = [{
-        concluded: false,
-        text : '',
-        code: '',
-    },];
-    getTodo = () =>{
-        const todo = document.getElementById('addTodo');
+    const handleEnter = event =>{
+        if(event.keyCode === 13){
+            const newValue = [...todos, value];
+            setTodos(newValue);
+            setValue('')
+        }
     }
-    render(){
-        const [{ concluded, text, code }] = this.todos;
-        return(
-            <div className="listTask">
-                <div class="tasks" key={code}>
-                    <input type="checkbox"></input>
-                    <input id="task" type="text" value={text}></input>
-                </div>
-            </div>
-        );
+    
+    const todoList = () =>{
+        return todos.map((todo,index) => (<Todo name={todo} key={index}/>));
     }
-}
+    return(
+    <div className="listTask">
+        <input id="addTodo" placeholder="Digite a tarefa..." className="addTask" value={value} onKeyDown={handleEnter} onChange={handleInput}/>
+        {todoList()}
+    </div>
+    )
+};
+
+export default Main;

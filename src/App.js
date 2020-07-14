@@ -1,9 +1,15 @@
 import React from 'react';
+import Main from './pages/main'
+
+import "./styles.css";
 
 function App() {
   return (
     <div>
-      <h1>Hello Wold!!</h1>
+      <div className="container">
+        <input id="addTodo" placeholder="Digite a tarefa..." className="addTask"></input>
+        <Main />
+      </div>
     </div>
   );
 }

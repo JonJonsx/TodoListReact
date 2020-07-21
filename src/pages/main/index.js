@@ -23,7 +23,7 @@ const Main = () => {
     }
     const handleIsCheck = todo =>{
         todo.isCheck = !todo.isCheck;
-        setTodos([...todos])
+        setTodos([...todos]);
     }
 
     const handleValueInput = (event,todo) => {
@@ -33,7 +33,7 @@ const Main = () => {
     };
 
     const todoList = () =>{
-        if(todos.length === 0 ) return
+        if(todos.length === 0 ) return;
 
         return todos.map((todo,index) => 
         (<Todo 
@@ -44,6 +44,7 @@ const Main = () => {
             key={index}/>
         ));
     }
+    
     return(
     <div className="listTask">
         <input id="addTodo" placeholder="Digite a tarefa..." className="addTask" value={value} onKeyDown={handleEnter} onChange={handleInput}/>

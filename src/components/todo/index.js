@@ -1,4 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
+import "index.css";
+
 
 const Todo = (props) =>{
     return (
@@ -7,6 +9,7 @@ const Todo = (props) =>{
             <input id="task" type="text" onChange={props.refreshValue} value={props.name}
                 style={{backgroundColor: props.concluido ? '#2ecc71' : '#282A36'}}
             />
+            <i class="far fa-trash-alt icon"></i>
         </div>
     );
 };

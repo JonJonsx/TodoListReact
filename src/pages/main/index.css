@@ -9,7 +9,6 @@ input{
     font-size: 15px;
     font-weight: 800;
     border: none;
-    /* background-color: red; */
 }
 .listTask .addTask{
     text-align: center;
@@ -22,7 +21,6 @@ input{
 }
 input[type="checkbox"]{
     position: absolute;
-    background-color: green;
     width: 20px;
     margin-left: 10px;
 }

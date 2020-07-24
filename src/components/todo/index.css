@@ -1,3 +1,7 @@
 .icon{
-    color: red;
+    position: absolute;
+    left: 50%;
+    margin-left: 380px;
+    background-color: red;
+    color: green;
 }

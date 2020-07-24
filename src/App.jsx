@@ -4,7 +4,6 @@ import Main from './pages/main'
 import "./styles.css";
 
 function App() {
-  
   return (
     <div>
       <div className="container">
